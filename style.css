@@ -1,0 +1,70 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111c2f;
+  --panel-2: #17243a;
+  --text: #eef4ff;
+  --muted: #aab8d0;
+  --brand: #68d8ff;
+  --brand-2: #8b5cf6;
+  --line: rgba(255,255,255,.12);
+  --shadow: 0 24px 80px rgba(0,0,0,.32);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(104,216,255,.16), transparent 38%), var(--bg);
+  color: var(--text);
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; }
+.brand {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)); font-weight: 800;
+}
+.nav-links { display: flex; gap: 24px; color: var(--muted); font-weight: 600; }
+.nav-links a:hover { color: var(--text); }
+.hero { min-height: 720px; }
+.hero-content { display: grid; grid-template-columns: 1.35fr .65fr; gap: 36px; align-items: center; padding: 80px 0 120px; }
+.eyebrow { color: var(--brand); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; margin: 0 0 12px; }
+h1 { font-size: clamp(3rem, 8vw, 6.6rem); line-height: .95; letter-spacing: -.07em; margin: 0 0 24px; }
+h2 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.02; letter-spacing: -.04em; margin: 0; }
+h3 { font-size: 1.35rem; margin: 14px 0 10px; }
+.subtitle { color: var(--muted); font-size: 1.25rem; line-height: 1.7; max-width: 760px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.btn { border: 1px solid var(--line); padding: 13px 18px; border-radius: 999px; font-weight: 800; transition: transform .2s ease, border .2s ease, background .2s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; border-color: transparent; }
+.btn.secondary { background: rgba(255,255,255,.08); }
+.btn.ghost { color: var(--muted); }
+.hero-card, .card, .dashboard-card, .contact { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); }
+.hero-card { padding: 30px; }
+.hero-card h2 { font-size: 1.8rem; }
+.hero-card p, .card p, .dashboard-card p, .contact p { color: var(--muted); line-height: 1.65; }
+.hero-card ul, .card ul { padding-left: 20px; color: var(--muted); line-height: 1.9; }
+.section { padding: 76px 0; }
+.section-heading { margin-bottom: 30px; }
+.grid { display: grid; gap: 22px; }
+.cards-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.card { padding: 28px; min-height: 360px; }
+.card.featured { background: linear-gradient(180deg, rgba(104,216,255,.16), rgba(255,255,255,.04)); }
+.tag { display: inline-flex; padding: 8px 12px; border-radius: 999px; background: rgba(104,216,255,.12); color: var(--brand); font-size: .82rem; font-weight: 800; }
+.card a, .dashboard-card a { color: var(--brand); font-weight: 800; display: inline-block; margin-top: 12px; }
+.dashboard-card { overflow: hidden; }
+.dashboard-card img { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; border-bottom: 1px solid var(--line); }
+.dashboard-card div { padding: 24px; }
+.split { display: grid; grid-template-columns: .35fr .65fr; gap: 28px; align-items: start; }
+.skills { display: flex; flex-wrap: wrap; gap: 12px; }
+.skills span { padding: 11px 14px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--muted); font-weight: 700; }
+.contact { text-align: center; padding: 54px 28px; margin-bottom: 80px; }
+.centered { justify-content: center; }
+@media (max-width: 860px) {
+  .nav { align-items: flex-start; gap: 18px; }
+  .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 12px 18px; }
+  .hero-content, .cards-3, .cards-2, .split { grid-template-columns: 1fr; }
+  .hero-content { padding-top: 46px; }
+}
